@@ -1,9 +1,3 @@
-"""A setuptools based setup module.
-See:
-https://packaging.python.org/en/latest/distributing.html
-https://github.com/pypa/sampleproject
-"""
-
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
 # To use a consistent encoding
@@ -32,7 +26,7 @@ setup(
 
     # Author details
     author='Adam Steeves',
-    author_email='adamhsteeves@gmail.com',
+    author_email='asteeves@gmail.com',
 
     # Choose your license
     license='MIT',
