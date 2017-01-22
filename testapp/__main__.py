@@ -7,16 +7,25 @@ from Classes import mGUI
 
 
 def main():
-    parser = argparse.ArgumentParser(description='This app is just a test')
-    parser.add_argument('--gui', default=True,
+    if not len(sys.argv) > 1:
+        launch_gui()
+    else:
+        parser = argparse.ArgumentParser(description='This app is just a test')
+        parser.add_argument('--gui', dest='gui', action='store_true',
                         help='Launch a PyQt gui rather than the command line')
-    args = parser.parse_args()
+        parser.add_argument('--no-gui', dest='gui',
+                        action='store_false')
+        args = parser.parse_args()
+        print(args)
 
     if args.gui:
-        print('The GUI is launching')
-        app = QtGui.QApplication(sys.argv)
-        qw = mGUI.QuitWindow()
-        sys.exit(app.exec_())
+        launch_gui()
+
+def launch_gui():
+    print('The GUI is launching')
+    app = QtGui.QApplication(sys.argv)
+    qw = mGUI.QuitWindow()
+    sys.exit(app.exec_())
 
 
 if __name__ == '__main__':
