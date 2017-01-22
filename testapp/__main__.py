@@ -4,8 +4,7 @@ import sys
 import argparse
 
 from PyQt4 import QtGui, QtCore
-from Classes import mGUI
-
+from testapp.Classes import mGUI
 
 def main():
     if not len(sys.argv) > 1:
