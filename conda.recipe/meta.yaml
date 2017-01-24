@@ -34,12 +34,12 @@ requirements:
 
   run:
     - python
-    - pyqt >=4,<5
+    - pyqt >=5.0
 
 test:
   # Python imports
   imports:
-    - PyQt4
+    - PyQt5
   commands:
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
