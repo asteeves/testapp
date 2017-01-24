@@ -3,7 +3,7 @@ package:
   version: "0.0.1"
 
 source:
-    path: .
+    path: ../
     #git_rev: v0.0.1
     #git_url: https://github.com/asteeves/testapp.git
 #  patches:

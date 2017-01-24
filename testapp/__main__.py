@@ -3,7 +3,8 @@ from __future__ import (print_function, absolute_import, division,
 import sys
 import argparse
 
-from PyQt4 import QtGui, QtCore
+import testapp
+from PyQt5.QtWidgets import QApplication
 from testapp.Classes import mGUI
 
 def main():
@@ -23,7 +24,7 @@ def main():
 
 def launch_gui():
     print('The GUI is launching')
-    app = QtGui.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     qw = mGUI.QuitWindow()
     sys.exit(app.exec_())
 

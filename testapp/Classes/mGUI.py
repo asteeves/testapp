@@ -5,20 +5,21 @@
 """
 
 import sys
-from PyQt4 import QtGui, QtCore
+from PyQt5.QtWidgets import QWidget, QMessageBox, QPushButton
+from PyQt5.QtCore import QCoreApplication
 
 
-class QuitWindow(QtGui.QWidget):
+class QuitWindow(QWidget):
 
     def __init__(self):
-        super(QuitWindow, self).__init__()
+        super().__init__()
         
         self.initUI()
 
     def initUI(self):
         
-        qbtn = QtGui.QPushButton('Quit', self)
-        qbtn.clicked.connect(QtCore.QCoreApplication.instance().quit)
+        qbtn = QPushButton('Quit', self)
+        qbtn.clicked.connect(QCoreApplication.instance().quit)
         qbtn.resize(qbtn.sizeHint())
         qbtn.move(50, 50)       
         
@@ -27,21 +28,14 @@ class QuitWindow(QtGui.QWidget):
         self.show()
         self.raise_()
 
-    def center(self):
-        
-        qr = self.frameGeometry()
-        cp = QtGui.QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
-
     def closeEvent(self, event):
         
-        reply = QtGui.QMessageBox.question(self, 'Message',
+        reply = QMessageBox.question(self, 'Message',
                             "Are you sure to quit?",
-                            QtGui.QMessageBox.Yes | QtGui.QMessageBox.No,
-                            QtGui.QMessageBox.No)
+                            QMessageBox.Yes | QMessageBox.No,
+                            QMessageBox.No)
 
-        if reply == QtGui.QMessageBox.Yes:
+        if reply == QMessageBox.Yes:
             event.accept()
         else:
             event.ignore()         
